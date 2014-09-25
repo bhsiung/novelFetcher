@@ -1,0 +1,141 @@
+body{
+	/*font: 1em/1.3em Montserrat,Helvetica,sans-serif;*/
+	padding-bottom: 30px;
+}
+a{
+	color: #333;
+	text-decoration: none;
+}
+a:visited{
+	color: #777;
+}
+#page{
+	margin: 10px;
+}
+
+
+#page-home #hd{
+	font-size: 46px;
+	padding: 260px 0 40px 40px;
+}
+#bd{
+	padding: 0 20px;
+}
+.reader .bd{
+	text-align:left;
+	-webkit-writing-mode: vertical-rl;
+}
+.reader.vertical{
+	text-align: right;
+	height: 700px;
+	width: 1000px;
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	margin-left: -500px;
+	border-radius: 30px;
+	box-shadow: 10px 10px 10px 0 rgba(0,0,0,.5),-10px 50px 60px 0 rgba(0,0,0,.3);
+	box-sizing: border-box;
+	opacity: 0;
+	-webkit-transition: all ease-out 200ms;
+}
+.reader{
+	line-height: 2;
+	background: #fff;
+}
+.reader.vertical.ready{
+	opacity: 1;
+}
+
+
+
+.arrow{
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 40px;
+	height: 40px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition: 0.3s ease;
+	-moz-transition: 0.3s ease;
+	-ms-transition: 0.3s ease;
+	transition: 0.3s ease;
+	border: solid rgba(50,50,50,.5);
+}
+.arrow:hover{
+	width: 50px;
+	height: 50px;
+}
+.arrow.right {
+	margin: -20px 0 0px 0;
+	right: 15px; 
+	border-width: 15px 15px 0 0;
+}
+.arrow.right:hover {
+	margin-top: -25px;
+}
+.arrow.left {
+	margin: -20px 0 0px 0;
+	left: 15px;
+	border-width: 0 0 15px 15px;
+}
+.arrow.left:hover {
+	margin-top: -25px;
+}
+.pagination {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.pagination a {
+	display: inline-block;
+	margin: 10px;
+	width: 20px;
+	height: 20px;
+}
+.pagination a:before {
+	background-color: #aaa;
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	border-radius: 100%;
+	-webkit-transition: 0.3s ease;
+	-moz-transition: 0.3s ease;
+	-ms-transition: 0.3s ease;
+	transition: 0.3s ease;
+}
+.pagination a:hover:before {
+	width: 15px;
+	height: 15px;
+	margin: -2px 0 0 -2px;
+}
+.pagination a.selected:before,
+.pagination a:hover:before { 
+	background-color: yellow;
+}
+.pagination a.selected:hover:before, .pagination a.selected:before {
+	width: 20px;
+	height: 20px;
+	margin: -5px 0 0 -5px;
+}
+
+.article #meta>h3{
+	margin:0 10px 0 0;
+	padding: 0;
+}
+#article{
+	margin-bottom: 20px;
+}
+.article #meta>*{
+	display: inline-block;
+	vertical-align: middle;
+} 

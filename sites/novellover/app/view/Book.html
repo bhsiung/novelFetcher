@@ -1,0 +1,35 @@
+<include href="app/view/header.html" />
+<include href="app/view/navi.html" />
+<div id="page">
+	<h1>{{@book['bookName']}}</h1>
+	<div class="util">
+		<i>last update</i>
+		<a href="/newBook?bookId={{@bookId}}">update</a>
+		<a href="?dump">dump</a>
+	</div>
+
+	<div class="row" id="chapters">
+	<repeat group="{{@chapters['hits']}}" value="{{@chapter}}">
+		<div class="col-md-4">
+			<a href="/book/{{@book['bookName']}}/article/{{@chapter.fields.chapterId[0]}}/{{@chapter.fields.title[0]}}" title="{{@chapter.fields.title[0]}}">{{@chapter.fields.title[0]}}</a>
+		</div>
+	</repeat>
+	</div>
+</div>
+
+<ul class="pager">
+<check if="{{@prevPg}}">
+	<true><li class="previous"><a href="?pg={{@prevPg}}">&larr; Older</a></li></true>
+	<false><li class="previous disabled"><a href="#">&larr; Older</a></li></false>
+</check>
+<check if="{{@nextPg}}">
+	<true><li class="next"><a href="?pg={{@nextPg}}">Newer &rarr;</a></li></true>
+	<false><li class="next disabled"><a href="#">Newer &rarr;</a></li></false>
+</check>
+</ul>
+<!--
+<div id="article" class="vertical reader">
+</div>
+-->
+<script src="/static/js/vreader.js"></script>
+<include href="app/view/afterBody.html" />

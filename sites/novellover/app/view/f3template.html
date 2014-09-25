@@ -1,0 +1,14 @@
+<p>from body... Hello, {{ @name }}!</p>
+<p>color: {{@params[color]}}</p>
+<p>size: {{@params[size]}}</p>
+<h1>{{ @func('hello','world') }}</h1>
+<check if="{{@params[color]=='red'}}">
+	<true><h2>Color is red!</h2></true>
+	<false><h2>whatever color, sucks @_@</h2></false>
+</check>
+<h3>Recipients:</h3>
+<ul>
+<repeat group="{{@recipients}}" key="{{@ikey}}" value="{{@ivalue}}">
+	<li>{{@ivalue}}</li>
+</repeat>
+</ul>

@@ -1,0 +1,19 @@
+<include href="app/view/header.html" />
+<include href="app/view/navi.html" />
+
+<div id="page">
+	<div class="page-header">
+		<h1>Search result for {{@keyword}}</h1>
+	</div>
+	<div class="row">
+		<ul id="navigator">
+			<repeat group="{{ @searchResult['hits'] }}" value="{{ @item }}">
+				<div class="col-md-4"><a href="/book/{{@item['_source']['bookName']}}/article/{{@item['_source']['chapterId']}}/{{@item['_source']['title']}}">
+					{{@item['_source']['title']}}
+				</a></div>
+			</repeat>
+		</ul>
+	</div>
+</div>
+<script src="/static/js/vreader.js"></script>
+

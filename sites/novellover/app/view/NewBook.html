@@ -1,0 +1,23 @@
+<include href="app/view/header.html" />
+<include href="app/view/navi.html" />
+<div id="page">
+<form role="form" method="post">
+	<check if="{{ @isCrawing }}">
+		<true>
+			<div class="form-group">
+				<div>Crawing right now!</div>
+			</div>
+		</true>
+		<false>
+			<div class="form-group">
+				<label for="new-url">Email address</label>
+				<input type="url" class="form-control" name="new-url" id="new-url" placeholder="Enter URL, e.g. http://tw.kxwxw.com/info/jxzs_96250.html" value="{{@remoteURL}}">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</false>
+	</check>
+	<repeat group="{{@errors}}" value="{{@error}}">
+		<p class="error">{{@error}}</p>
+	</repeat>
+</form>
+</div>

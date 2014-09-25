@@ -1,0 +1,44 @@
+<include href="app/view/header.html" />
+<include href="app/view/beforeBody.html" />
+<include href="app/view/navi.html" />
+<div id="bd" class="article">
+	<!--<button id="toggle">toggle</button>-->
+	<div id="meta">
+		<h3>{{@article.bookName}}</h3>
+		<div class="btn-group navi">
+			<check if="{{isset(@prev)}}">
+				<a type="button" class="btn btn-default" href="/book/{{@article.bookName}}/article/{{@prev.chapterId[0]}}/{{@prev.title[0]}}">
+					<span class="glyphicon glyphicon-step-backward"></span>
+					{{@prev.title[0]}}
+				</a>
+			</check>
+			<a type="button" class="btn btn-default" href="/book/{{@article.bookId}}/{{@article.bookName}}">index</a>
+			<check if="{{isset(@next)}}">
+				<a type="button" class="btn btn-default" href="/book/{{@article.bookName}}/article/{{@next.chapterId[0]}}/{{@next.title[0]}}">
+					{{@next.title[0]}}
+					<span class="glyphicon glyphicon-step-forward"></span>
+				</a>
+			</check>
+		</div>
+	</div>
+	<h1>{{@article.title}}</h1>
+	<div id="article" class="reader">{{@article.text|raw}}</div>
+	<div class="btn-group navi">
+		<check if="{{isset(@prev)}}">
+			<a type="button" class="btn btn-default" href="/book/{{@article.bookName}}/article/{{@prev.chapterId[0]}}/{{@prev.title[0]}}">
+				<span class="glyphicon glyphicon-step-backward"></span>
+				{{@prev.title[0]}}
+			</a>
+		</check>
+		<a type="button" class="btn btn-default" href="/book/{{@article.bookId}}/{{@article.bookName}}">index</a>
+		<check if="{{isset(@next)}}">
+			<a type="button" class="btn btn-default" href="/book/{{@article.bookName}}/article/{{@next.chapterId[0]}}/{{@next.title[0]}}">
+				{{@next.title[0]}}
+				<span class="glyphicon glyphicon-step-forward"></span>
+			</a>
+		</check>
+	</div>
+</div>
+
+<script src="/static/js/vreader.js"></script>
+<include href="app/view/afterBody.html" />

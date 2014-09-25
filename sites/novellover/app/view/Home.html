@@ -1,0 +1,29 @@
+<include href="app/view/header.html" />
+<style>
+#navigator li .last-chapter{
+	text-indent: 2em;
+	display: block;
+	font-style: italic;
+	color: #000;
+}
+#navigator li{
+	margin-bottom: 1em;
+}
+</style>
+<include href="app/view/navi.html" />
+
+
+<ul id="navigator">
+<repeat group="{{@books}}" value="{{@book}}">
+	<li>
+		<a href="/book/{{@book['_id']}}/{{@book['_source']['bookName']}}">{{@book['_source']['bookName']}}</a>
+		<a class="last-chapter" href="/book/{{@book['_source']['bookName']}}/article/{{@book['lastChapter']['fields']['chapterId'][0]}}/{{@book['lastChapter']['fields']['title'][0]}}">{{@book['lastChapter']['fields']['title'][0]}}</a>
+	</li>
+</repeat>
+</ul>
+
+<!--
+<div id="article" class="vertical reader">
+</div>
+-->
+<script src="/static/js/vreader.js"></script>
